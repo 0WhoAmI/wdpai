@@ -64,17 +64,17 @@ input {
   border: none;
   border: 1px solid #ababab;
   border-radius: 5px;
-  padding: 1em;
+  line-height: 2.5em;
   margin: 1em;
   margin-top: 0.5em;
-  width: 80%;
+  width: 78%;
 }
 
 button {
   background: #28874d;
   border-radius: 5px;
 
-  width: 90%;
+  width: 80%;
   border: none;
   color: black;
   margin: 1em;
