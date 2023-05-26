@@ -67,7 +67,8 @@ input {
   line-height: 2.5em;
   margin: 1em;
   margin-top: 0.5em;
-  width: 78%;
+  width: 75%;
+  padding-left: 1em;
 }
 
 button {
