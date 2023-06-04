@@ -1,6 +1,7 @@
 body {
   margin: 0 auto;
   background-color: #1c1d22;
+  font-family: Georgia, serif;
 }
 .container {
   width: 100vw;
@@ -26,7 +27,7 @@ img {
   justify-content: center;
 }
 
-form {
+form.login {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -61,6 +62,7 @@ h4 {
 
 input {
   background-color: #1c1d22;
+  color: #ababab;
   border: none;
   border: 1px solid #ababab;
   border-radius: 5px;
