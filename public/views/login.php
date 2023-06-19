@@ -19,6 +19,9 @@
           </h2>
           <h4>Lostfriends</h4>
         </div>
+        <?php
+        
+        ?>
         <span>Email</span>
         <input name="email" type="text" placeholder="Enter your email" />
         <span>Password</span>
