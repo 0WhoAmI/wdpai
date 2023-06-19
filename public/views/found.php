@@ -1,13 +1,12 @@
 <!DOCTYPE html>
+
 <head>
   <link rel="stylesheet" type="text/css" href="public/css/style.css" />
   <link rel="stylesheet" type="text/css" href="public/css/found.css" />
-  <script
-    src="https://kit.fontawesome.com/33c1bba527.js"
-    crossorigin="anonymous"
-  ></script>
+  <script src="https://kit.fontawesome.com/33c1bba527.js" crossorigin="anonymous"></script>
   <title>FOUND PAGE</title>
 </head>
+
 <body>
   <div class="logo-found">
     <img src="public/img/logo.svg" />

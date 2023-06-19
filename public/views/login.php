@@ -1,15 +1,17 @@
 <!DOCTYPE html>
+
 <head>
   <link rel="stylesheet" type="text/css" href="public/css/style.css" />
   <title>LOGIN PAGE</title>
 </head>
+
 <body>
   <div class="container">
     <div class="logo">
       <img src="public/img/logo.svg" />
     </div>
     <div class="login-container">
-      <form class="login">
+      <form class="login" action="login" method="POST">
         <div class="welcome-container">
           <h2>
             Welcome!<br /><br />
@@ -17,15 +19,11 @@
           </h2>
           <h4>Lostfriends</h4>
         </div>
-        <span>User name</span>
-        <input name="userName" type="text" placeholder="Enter your user name" />
+        <span>Email</span>
+        <input name="email" type="text" placeholder="Enter your email" />
         <span>Password</span>
-        <input
-          name="password"
-          type="password"
-          placeholder="Enter your password"
-        />
-        <button>LOGIN</button>
+        <input name="password" type="password" placeholder="Enter your password" />
+        <button type="submit">LOGIN</button>
         <p style="color: #ababab">
           Don't have an Account?
           <a style="color: #28874d; font-weight: bold">Register</a>
