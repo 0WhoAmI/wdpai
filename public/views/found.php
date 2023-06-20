@@ -54,10 +54,10 @@
       </header>
       <section class="found-list">
         <div id="found-1">
-          <div class="photo"><img src="public/img/uploads/puppy.jpg" /></div>
+          <div class="photo"><img src="public/uploads/<?= $found->getImage()?>" /></div>
           <div class="info">
-            <p class="info-added-date">Added: 2023-04-25</p>
-            <p class="info-city">icona KRAKÓW</p>
+            <p class="info-added-date"><?= $found->getGenre()?></p>
+            <p class="info-city"><?= $found->getCountry()?></p>
             <p class="info-description">Przyjazny Pies</p>
             <p class="info-found-date">Missing: 2023-04-2</p>
           </div>

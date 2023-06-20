@@ -60,9 +60,9 @@ h4 {
   color: #50a45c;
 }
 
-input {
+input, textarea {
   background-color: #1c1d22;
-  color: #ababab;
+  color: white;
   border: none;
   border: 1px solid #ababab;
   border-radius: 5px;

@@ -150,3 +150,14 @@ section {
   border-radius: 5em;
   height: 90%;
 }
+
+section.add-report-finding{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.add-report-finding >form{
+  display: flex;
+  flex-direction: column;
+}
