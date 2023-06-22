@@ -3,7 +3,6 @@
 <head>
   <link rel="stylesheet" type="text/css" href="public/css/style.css" />
   <link rel="stylesheet" type="text/css" href="public/css/found.css" />
-  <script src="https://kit.fontawesome.com/33c1bba527.js" crossorigin="anonymous"></script>
   <title>FOUND PAGE</title>
 </head>
 
@@ -46,7 +45,6 @@
             <input placeholder="Date" />
             <input placeholder="City" />
             <input placeholder="Genre" />
-            <input placeholder="Gender" />
             <input placeholder="Microchip number" />
             <button>Filter</button>
           </form>
@@ -54,12 +52,13 @@
       </header>
       <section class="found-list">
         <div id="found-1">
-          <div class="photo"><img src="public/uploads/<?= $found->getImage()?>" /></div>
+          <div class="photo"><img src="public/uploads/<?= $found->getPhoto()?>"></div>
           <div class="info">
-            <p class="info-added-date"><?= $found->getGenre()?></p>
-            <p class="info-city"><?= $found->getCountry()?></p>
-            <p class="info-description">Przyjazny Pies</p>
-            <p class="info-found-date">Missing: 2023-04-2</p>
+            <p class="info-city"><small>City:</small>&emsp; <strong><?= $found->getCity()?></strong></p>
+            <p class="info-microchipNumer"><small>Microchip:</small>&emsp; <strong><?= $found->getMicrochipNumber()?></strong></p>
+            <p class="info-description"><small>Description:</small>&emsp; <strong><?= $found->getDescription()?></strong></p>
+            <p class="info-found-date"><small>Found:</small>&emsp; <strong><?= $found->getFoundDate()?></strong></p>
+            <p class="info-telephone"><small>Phone:</small>&emsp; <strong><?= $found->getTelephone()?></strong></p>
           </div>
         </div>
         <div id="found-2">
@@ -71,169 +70,7 @@
             <p class="info-found-date">2023-04-2</p>
           </div>
         </div>
-        <div id="found-3">
-          <div class="photo"><img src="public/img/uploads/puppy.jpg" /></div>
-          <div class="info">
-            <p class="info-added-date">Added: 2023-04-25</p>
-            <p class="info-city">icona KRAKÓW</p>
-            <p class="info-description">
-              Przyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny pies
-            </p>
-            <p class="info-found-date">2023-04-2</p>
-          </div>
-        </div>
-        <div id="found-4">
-          <div class="photo"><img src="public/img/uploads/puppy.jpg" /></div>
-          <div class="info">
-            <p class="info-added-date">Added: 2023-04-25</p>
-            <p class="info-city">icona KRAKÓW</p>
-            <p class="info-description">
-              Przyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny piesPrzyjazny
-              piesPrzyjazny piesPrzyjazny piesPrzyjazny pies
-            </p>
-            <p class="info-found-date">2023-04-2</p>
-          </div>
+        
         </div>
         <div>project2</div>
         <div>project3</div>

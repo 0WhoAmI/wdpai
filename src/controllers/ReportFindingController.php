@@ -20,7 +20,7 @@ class ReportFindingController extends AppController
                 dirname(__DIR__) . self::UPLOAD_DIRECTORY . $_FILES['file']['name']
             );
 
-            $found = new Found($_POST['city'], $_POST['genre']);
+            $found = new Found($_POST['foundDate'], $_POST['city'], $_POST['genre'], $_FILES['file']['name'], $_POST['description'], $_POST['microchipNumber'], $_POST['telephone']);
 
             return $this->render('found', ['messages' => $this->messages, 'found' => $found]);
         }

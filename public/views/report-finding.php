@@ -3,7 +3,6 @@
 <head>
   <link rel="stylesheet" type="text/css" href="public/css/style.css" />
   <link rel="stylesheet" type="text/css" href="public/css/found.css" />
-  <script src="https://kit.fontawesome.com/33c1bba527.js" crossorigin="anonymous"></script>
   <title>REPORT FINDING PAGE</title>
 </head>
 
@@ -52,14 +51,12 @@
             }
             ?>
             <input type="file" name="file" />
-            <input name="date" placeholder="Date" />
+            <input name="foundDate" placeholder="Date" />
             <input name="city" placeholder="City" />
             <input name="genre" placeholder="Genre" />
-            <input name="gender" placeholder="Gender" />
             <input name="microchipNumber" placeholder="Microchip number" />
-            <input name="email" placeholder="Email" />
             <input name="telephone" placeholder="Telephone" />
-            <textarea name="animalDescription" placeholder="Animal description" rows="5"></textarea>
+            <textarea name="description" placeholder="Animal description" rows="5"></textarea>
             <button type="submit">Send</button>
           </form>
         </section>
