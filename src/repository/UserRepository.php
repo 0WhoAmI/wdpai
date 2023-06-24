@@ -10,7 +10,7 @@ class UserRepository extends Repository
     {
 
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM public.Users Where email = :email
+            SELECT * FROM public.user Where email = :email
         ');
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->execute();
