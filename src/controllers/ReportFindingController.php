@@ -2,6 +2,7 @@
 
 require_once 'AppController.php';
 require_once __DIR__ . '/../models/Found.php';
+require_once __DIR__ . '/../repository/FoundRepository.php';
 
 class ReportFindingController extends AppController
 {
@@ -10,6 +11,12 @@ class ReportFindingController extends AppController
     const UPLOAD_DIRECTORY = '../../public/uploads/';
 
     private $messages = [];
+    private $foundRepository;
+
+    public function __construct(){
+        parent:: __construct();
+        $this->foundRepository = new FoundRepository();
+    }
 
     public function reportFinding()
     {
@@ -21,6 +28,7 @@ class ReportFindingController extends AppController
             );
 
             $found = new Found($_POST['foundDate'], $_POST['city'], $_POST['genre'], $_FILES['file']['name'], $_POST['description'], $_POST['microchipNumber'], $_POST['telephone']);
+            $this->foundRepository->reportFinding($found);
 
             return $this->render('found', ['messages' => $this->messages, 'found' => $found]);
         }
