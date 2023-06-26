@@ -3,7 +3,7 @@
 <head>
   <link rel="stylesheet" type="text/css" href="public/css/style.css" />
   <link rel="stylesheet" type="text/css" href="public/css/found.css" />
-  <title>REPORT FINDING PAGE</title>
+  <title>REPORT LOST PAGE</title>
 </head>
 
 <body>
@@ -38,11 +38,11 @@
     <main>
       <header>
         <div class="title">
-          <h1>Report Finding</h1>
+          <h1>Report Lost</h1>
         </div>
 
         <section class="add-report-finding">
-          <form action="reportFinding" method="POST" ENCTYPE="multipart/form-data">
+          <form action="reportLost" method="POST" ENCTYPE="multipart/form-data">
             <?php
             if (isset($messages)) {
               foreach ($messages as $message) {
@@ -51,7 +51,7 @@
             }
             ?>
             <input type="file" name="file" />
-            <input name="foundDate" placeholder="Date" />
+            <input name="lostDate" placeholder="Date" />
             <input name="city" placeholder="City" />
             <input name="genre" placeholder="Genre" />
             <input name="microchipNumber" placeholder="Microchip number" />

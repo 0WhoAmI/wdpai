@@ -2,7 +2,7 @@
 
 <head>
   <link rel="stylesheet" type="text/css" href="public/css/style.css" />
-  <title>LOGIN PAGE</title>
+  <title>REGISTER PAGE</title>
 </head>
 
 <body>
@@ -11,11 +11,11 @@
       <img src="public/img/logo.svg" />
     </div>
     <div class="login-container">
-      <form class="login" action="login" method="POST">
+      <form class="login" action="register" method="POST">
         <div class="welcome-container">
           <h2>
             Welcome!<br /><br />
-            Sign in to
+            Register in to
           </h2>
           <h4>Lostfriends</h4>
         </div>
@@ -32,10 +32,16 @@
         <input name="email" type="text" placeholder="Enter your email" />
         <span>Password</span>
         <input name="password" type="password" placeholder="Enter your password" />
-        <button type="submit">LOGIN</button>
+        <span>Confirm password</span>
+        <input name="confirmedPassword" type="password" placeholder="Confirm your password" />
+        <span>Name</span>
+        <input name="name" type="text" placeholder="Enter your name" />
+        <span>Surname</span>
+        <input name="surname" type="text" placeholder="Enter your surname" />
+        <button type="submit">Register</button>
         <p style="color: #ababab">
-          Don't have an Account?
-          <a href="register" style="color: #28874d; font-weight: bold">Register</a>
+          Already have an Account?
+          <a href="login" style="color: #28874d; font-weight: bold">Login</a>
         </p>
       </form>
     </div>

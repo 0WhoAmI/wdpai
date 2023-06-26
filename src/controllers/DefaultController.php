@@ -9,9 +9,5 @@ class DefaultController extends AppController
     {
         $this->render('login');
     }
-
-    public function found()
-    {
-        $this->render('found');
-    }
+   
 }

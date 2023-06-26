@@ -32,7 +32,8 @@ class FoundRepository extends Repository
         );
     }
 
-    public function reportFinding(Found $found): void{
+    public function reportFinding(Found $found): void
+    {
         $date = new DateTime();
 
         $stmt = $this->database->connect()->prepare('
@@ -49,7 +50,7 @@ class FoundRepository extends Repository
         ');
 
         //TODO: Pobieranie id uzytkownika zalogowanego
-        $id_user=26;
+        $id_user = 26;
 
         $stmt->execute([
             $found->getFoundDate(),
@@ -61,5 +62,30 @@ class FoundRepository extends Repository
             $found->getTelephone(),
             $id_user
         ]);
+    }
+
+    public function getFounds(): array
+    {
+        $result = [];
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM found;
+        ');
+        $stmt->execute();
+        $founds = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($founds as $found) {
+            $result[] = new Found(
+                $found['foundDate'],
+                $found['city'],
+                $found['genre'],
+                $found['photo'],
+                $found['description'],
+                $found['microchipNumber'],
+                $found['telephone']
+            );
+        }
+
+        return $result;
     }
 }

@@ -3,7 +3,7 @@
 <head>
   <link rel="stylesheet" type="text/css" href="public/css/style.css" />
   <link rel="stylesheet" type="text/css" href="public/css/found.css" />
-  <title>FOUND PAGE</title>
+  <title>LOST PAGE</title>
 </head>
 
 <body>
@@ -38,7 +38,7 @@
     <main>
       <header>
         <div class="title">
-          <h1>Found</h1>
+          <h1>Lost</h1>
         </div>
         <div class="search-bar">
           <form>
@@ -50,21 +50,20 @@
           </form>
         </div>
       </header>
-
       <section class="found-list">
-        <?php
-        foreach ($founds as $found) :
+      <?php
+        foreach ( $losts as $lost):
         ?>
-          <div>
-            <div class="photo"><img src="public/uploads/<?= $found->getPhoto() ?>"></div>
-            <div class="info">
-              <p class="info-city"><small>City:</small>&emsp; <strong><?= $found->getCity() ?></strong></p>
-              <p class="info-microchipNumer"><small>Microchip:</small>&emsp; <strong><?= $found->getMicrochipNumber() ?></strong></p>
-              <p class="info-description"><small>Description:</small>&emsp; <strong><?= $found->getDescription() ?></strong></p>
-              <p class="info-found-date"><small>Found:</small>&emsp; <strong><?= $found->getFoundDate() ?></strong></p>
-              <p class="info-telephone"><small>Phone:</small>&emsp; <strong><?= $found->getTelephone() ?></strong></p>
-            </div>
+        <div>
+          <div class="photo"><img src="public/uploads/<?= $lost->getPhoto()?>"></div>
+          <div class="info">
+            <p class="info-city"><small>City:</small>&emsp; <strong><?= $lost->getCity()?></strong></p>
+            <p class="info-microchipNumer"><small>Microchip:</small>&emsp; <strong><?= $lost->getMicrochipNumber()?></strong></p>
+            <p class="info-description"><small>Description:</small>&emsp; <strong><?= $lost->getDescription()?></strong></p>
+            <p class="info-found-date"><small>Lost:</small>&emsp; <strong><?= $lost->getLostDate()?></strong></p>
+            <p class="info-telephone"><small>Phone:</small>&emsp; <strong><?= $lost->getTelephone()?></strong></p>
           </div>
+        </div>
         <?php endforeach; ?>
       </section>
     </main>

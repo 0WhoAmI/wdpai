@@ -1,8 +1,8 @@
 <?php
 
-class Found
+class Lost
 {
-    private $foundDate;
+    private $lostDate;
     private $city;
     private $genre;
     private $photo;
@@ -11,9 +11,9 @@ class Found
     private $telephone;
 
 
-    public function __construct($foundDate, $city, $genre, $photo, $description, $microchipNumber, $telephone)
+    public function __construct($lostDate, $city, $genre, $photo, $description, $microchipNumber, $telephone)
     {
-        $this->foundDate = $foundDate;
+        $this->lostDate = $lostDate;
         $this->city = $city;
         $this->genre = $genre;
         $this->photo = $photo;
@@ -22,14 +22,14 @@ class Found
         $this->telephone = $telephone;
     }
 
-    public function getFoundDate(): ?string
+    public function getLostDate(): ?string
     {
-        return $this->foundDate;
+        return $this->lostDate;
     }
 
-    public function setFoundDate(string $foundDate)
+    public function setLostDate(string $lostDate)
     {
-        $this->foundDate = $foundDate;
+        $this->lostDate = $lostDate;
     }
 
     public function getCity(): string
