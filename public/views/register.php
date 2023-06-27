@@ -2,6 +2,7 @@
 
 <head>
   <link rel="stylesheet" type="text/css" href="public/css/style.css" />
+  <script type="text/javascript" src="./public/js/script.js" defer></script>
   <title>REGISTER PAGE</title>
 </head>
 
@@ -20,14 +21,16 @@
           <h4>Lostfriends</h4>
         </div>
 
-        <?php
-        if (isset($messages)) {
-          foreach ($messages as $message) {
-            echo $message;
+        <a style="color: red;">
+          <?php
+          if (isset($messages)) {
+            foreach ($messages as $message) {
+              echo $message;
+            }
           }
-        }
-        ?>
-
+          ?>
+        </a>
+        
         <span>Email</span>
         <input name="email" type="text" placeholder="Enter your email" />
         <span>Password</span>

@@ -46,6 +46,62 @@ class LostController extends AppController
         return $this->render('report-lost', ['messages' => $this->messages]);
     }
 
+    public function searchLostDate()
+    {
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) :  '';
+
+        if ($contentType === "application/json") {
+            $content = trim(file_get_contents("php://input"));
+            $decoded = json_decode($content, true);
+
+            header('Content-type: application/json');
+            http_response_code(200);
+            echo json_encode($this->lostRepository->getLostByDate($decoded['search']));
+        }
+    }
+
+    public function searchLostCity()
+    {
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) :  '';
+
+        if ($contentType === "application/json") {
+            $content = trim(file_get_contents("php://input"));
+            $decoded = json_decode($content, true);
+
+            header('Content-type: application/json');
+            http_response_code(200);
+            echo json_encode($this->lostRepository->getLostByCity($decoded['search']));
+        }
+    }
+
+    public function searchLostGenre()
+    {
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) :  '';
+
+        if ($contentType === "application/json") {
+            $content = trim(file_get_contents("php://input"));
+            $decoded = json_decode($content, true);
+
+            header('Content-type: application/json');
+            http_response_code(200);
+            echo json_encode($this->lostRepository->getLostByGenre($decoded['search']));
+        }
+    }
+
+    public function searchMicrochipNumber()
+    {
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) :  '';
+
+        if ($contentType === "application/json") {
+            $content = trim(file_get_contents("php://input"));
+            $decoded = json_decode($content, true);
+
+            header('Content-type: application/json');
+            http_response_code(200);
+            echo json_encode($this->lostRepository->getLostByMicrochipNumber($decoded['search']));
+        }
+    }
+
     private function validate(array $file): bool
     {
         if ($file['size'] > self::MAX_FILES_SIZE) {

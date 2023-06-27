@@ -20,13 +20,15 @@
           <h4>Lostfriends</h4>
         </div>
 
-        <?php
-        if (isset($messages)) {
-          foreach ($messages as $message) {
-            echo $message;
+        <a style="color: red;">
+          <?php
+          if (isset($messages)) {
+            foreach ($messages as $message) {
+              echo $message;
+            }
           }
-        }
-        ?>
+          ?>
+        </a>
 
         <span>Email</span>
         <input name="email" type="text" placeholder="Enter your email" />

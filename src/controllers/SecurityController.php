@@ -57,8 +57,7 @@ class SecurityController extends AppController
             return $this->render('register', ['messages' => ['Please provide proper password']]);
         }
 
-        //TODO try to use better hash function
-        $user = new User($email, md5($password), $name, $surname);
+        $user = new User(null, $email, md5($password), $name, $surname);
         $this->userRepository->addUser($user);
         return $this->render('login', ['messages' => ['You\'ve been succesfully registrated!']]);
     }

@@ -13,15 +13,16 @@ class FoundController extends AppController
     private $messages = [];
     private $foundRepository;
 
-    public function __construct(){
-        parent:: __construct();
+    public function __construct()
+    {
+        parent::__construct();
         $this->foundRepository = new FoundRepository();
     }
 
     public function found()
     {
         $founds = $this->foundRepository->getFounds();
-        $this->render('found', ['founds'=>$founds]);
+        $this->render('found', ['founds' => $founds]);
     }
 
     public function reportFinding()
@@ -37,13 +38,69 @@ class FoundController extends AppController
             $this->foundRepository->reportFinding($found);
 
             return $this->render('found', [
-                'founds'=> $this->foundRepository->getFounds(),
+                'founds' => $this->foundRepository->getFounds(),
                 'messages' => $this->messages, 'found' => $found
             ]);
         }
 
 
         return $this->render('report-finding', ['messages' => $this->messages]);
+    }
+
+    public function searchFoundDate()
+    {
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) :  '';
+
+        if ($contentType === "application/json") {
+            $content = trim(file_get_contents("php://input"));
+            $decoded = json_decode($content, true);
+
+            header('Content-type: application/json');
+            http_response_code(200);
+            echo json_encode($this->foundRepository->getFoundByDate($decoded['search']));
+        }
+    }
+
+    public function searchFoundCity()
+    {
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) :  '';
+
+        if ($contentType === "application/json") {
+            $content = trim(file_get_contents("php://input"));
+            $decoded = json_decode($content, true);
+
+            header('Content-type: application/json');
+            http_response_code(200);
+            echo json_encode($this->foundRepository->getFoundByCity($decoded['search']));
+        }
+    }
+
+    public function searchFoundGenre()
+    {
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) :  '';
+
+        if ($contentType === "application/json") {
+            $content = trim(file_get_contents("php://input"));
+            $decoded = json_decode($content, true);
+
+            header('Content-type: application/json');
+            http_response_code(200);
+            echo json_encode($this->foundRepository->getFoundByGenre($decoded['search']));
+        }
+    }
+
+    public function searchMicrochipNumber()
+    {
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) :  '';
+
+        if ($contentType === "application/json") {
+            $content = trim(file_get_contents("php://input"));
+            $decoded = json_decode($content, true);
+
+            header('Content-type: application/json');
+            http_response_code(200);
+            echo json_encode($this->foundRepository->getFoundByMicrochipNumber($decoded['search']));
+        }
     }
 
     private function validate(array $file): bool

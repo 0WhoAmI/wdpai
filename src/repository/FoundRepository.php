@@ -2,13 +2,12 @@
 
 require_once 'Repository.php';
 require_once __DIR__ . '/../models/Found.php';
+require_once __DIR__ . '/../models/User.php';
 
 class FoundRepository extends Repository
 {
-
     public function getFound(int $id): ?Found
     {
-
         $stmt = $this->database->connect()->prepare('
             SELECT * FROM found Where id = :id
         ');
@@ -76,16 +75,66 @@ class FoundRepository extends Repository
 
         foreach ($founds as $found) {
             $result[] = new Found(
-                $found['foundDate'],
+                $found['found_date'],
                 $found['city'],
                 $found['genre'],
                 $found['photo'],
                 $found['description'],
-                $found['microchipNumber'],
+                $found['microchip_number'],
                 $found['telephone']
             );
         }
 
         return $result;
+    }
+
+    public function getFoundByDate(string $searchString)
+    {
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM found WHERE found_date = :search
+        ');
+        $stmt->bindParam(':search', $searchString, PDO::PARAM_STR);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getFoundByCity(string $searchString)
+    {
+        $searchString = '%' . strtolower($searchString) . '%';
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM found WHERE LOWER(city) LIKE :search
+        ');
+        $stmt->bindParam(':search', $searchString, PDO::PARAM_STR);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getFoundByGenre(string $searchString)
+    {
+        $searchString = '%' . strtolower($searchString) . '%';
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM found WHERE LOWER(genre) LIKE :search
+        ');
+        $stmt->bindParam(':search', $searchString, PDO::PARAM_STR);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getFoundByMicrochipNumber(string $searchString)
+    {
+        $searchString = '%' . strtolower($searchString) . '%';
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM found WHERE LOWER(microchip_number) LIKE :search
+        ');
+        $stmt->bindParam(':search', $searchString, PDO::PARAM_STR);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }

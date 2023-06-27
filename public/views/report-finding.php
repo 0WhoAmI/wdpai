@@ -31,7 +31,7 @@
         </li>
         <li>
           <i class="fa-light fa-folder-magnifying-glass"></i>
-          <a href="#" class="button">Profile</a>
+          <a href="login" class="button">Log out</a>
         </li>
       </ul>
     </nav>
@@ -51,11 +51,11 @@
             }
             ?>
             <input type="file" name="file" />
-            <input name="foundDate" placeholder="Date" />
+            <input name="foundDate" type="date" placeholder="Date" />
             <input name="city" placeholder="City" />
             <input name="genre" placeholder="Genre" />
             <input name="microchipNumber" placeholder="Microchip number" />
-            <input name="telephone" placeholder="Telephone" />
+            <input name="telephone" placeholder="Telephone" pattern="[0-9]{9}" title="Podaj 9 cyfr"/>
             <textarea name="description" placeholder="Animal description" rows="5"></textarea>
             <button type="submit">Send</button>
           </form>

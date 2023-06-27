@@ -60,7 +60,8 @@ h4 {
   color: #50a45c;
 }
 
-input, textarea {
+input,
+textarea {
   background-color: #1c1d22;
   color: white;
   border: none;
@@ -88,7 +89,7 @@ button {
     flex-direction: column;
   }
 
-  * {
+  .container * {
     font-size: 36px;
   }
 
@@ -97,7 +98,7 @@ button {
     width: 100%;
   }
 
-  form {
+  .container form {
     margin: auto;
     width: 80%;
   }

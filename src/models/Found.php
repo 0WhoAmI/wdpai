@@ -22,7 +22,7 @@ class Found
         $this->telephone = $telephone;
     }
 
-    public function getFoundDate(): ?string
+    public function getFoundDate(): string
     {
         return $this->foundDate;
     }
@@ -62,7 +62,7 @@ class Found
         $this->photo = $photo;
     }
 
-    public function getDescription(): string
+    public function getDescription(): ?string
     {
         return $this->description;
     }

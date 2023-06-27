@@ -3,6 +3,7 @@
 <head>
   <link rel="stylesheet" type="text/css" href="public/css/style.css" />
   <link rel="stylesheet" type="text/css" href="public/css/found.css" />
+  <script type="text/javascript" src="./public/js/searchFound.js" defer></script>
   <title>FOUND PAGE</title>
 </head>
 
@@ -31,7 +32,7 @@
         </li>
         <li>
           <i class="fa-light fa-folder-magnifying-glass"></i>
-          <a href="#" class="button">Profile</a>
+          <a href="login" class="button">Log out</a>
         </li>
       </ul>
     </nav>
@@ -42,11 +43,10 @@
         </div>
         <div class="search-bar">
           <form>
-            <input placeholder="Date" />
+            <input placeholder="Date" type="date" />
             <input placeholder="City" />
             <input placeholder="Genre" />
             <input placeholder="Microchip number" />
-            <button>Filter</button>
           </form>
         </div>
       </header>
@@ -70,3 +70,16 @@
     </main>
   </div>
 </body>
+
+<template id="found-template">
+  <div>
+    <div class="photo"><img src=""></div>
+    <div class="info">
+      <p class="info-city"><small>City:</small>&emsp; <strong></strong></p>
+      <p class="info-microchipNumer"><small>Microchip:</small>&emsp; <strong></strong></p>
+      <p class="info-description"><small>Description:</small>&emsp; <strong></strong></p>
+      <p class="info-found-date"><small>Found:</small>&emsp; <strong></strong></p>
+      <p class="info-telephone"><small>Phone:</small>&emsp; <strong></strong></p>
+    </div>
+  </div>
+</template>

@@ -2,6 +2,7 @@
 
 require_once 'Repository.php';
 require_once __DIR__ . '/../models/Lost.php';
+require_once __DIR__ . '/../models/User.php';
 
 class LostRepository extends Repository
 {
@@ -74,17 +75,67 @@ class LostRepository extends Repository
         $losts = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         foreach ($losts as $lost) {
-            $result[] = new Found(
-                $lost['lostDate'],
+            $result[] = new Lost(
+                $lost['lost_date'],
                 $lost['city'],
                 $lost['genre'],
                 $lost['photo'],
                 $lost['description'],
-                $lost['microchipNumber'],
+                $lost['microchip_number'],
                 $lost['telephone']
             );
         }
 
         return $result;
+    }
+
+    public function getLostByDate(string $searchString)
+    {
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM lost WHERE lost_date = :search
+        ');
+        $stmt->bindParam(':search', $searchString, PDO::PARAM_STR);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getLostByCity(string $searchString)
+    {
+        $searchString = '%' . strtolower($searchString) . '%';
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM lost WHERE LOWER(city) LIKE :search
+        ');
+        $stmt->bindParam(':search', $searchString, PDO::PARAM_STR);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getLostByGenre(string $searchString)
+    {
+        $searchString = '%' . strtolower($searchString) . '%';
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM lost WHERE LOWER(genre) LIKE :search
+        ');
+        $stmt->bindParam(':search', $searchString, PDO::PARAM_STR);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getLostByMicrochipNumber(string $searchString)
+    {
+        $searchString = '%' . strtolower($searchString) . '%';
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM lost WHERE LOWER(microchip_number) LIKE :search
+        ');
+        $stmt->bindParam(':search', $searchString, PDO::PARAM_STR);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
