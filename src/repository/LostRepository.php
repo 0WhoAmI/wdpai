@@ -25,7 +25,7 @@ class LostRepository extends Repository
         return new Lost(
             $lost['lostDate'],
             $lost['city'],
-            $lost['genre'],
+            $lost['species'],
             $lost['photo'],
             $lost['description'],
             $lost['microchipNumber'],
@@ -33,14 +33,13 @@ class LostRepository extends Repository
         );
     }
 
-    public function reportLost(Lost $lost): void{
-        $date = new DateTime();
-
+    public function reportLost(Lost $lost): void
+    {
         $stmt = $this->database->connect()->prepare('
         INSERT INTO lost(
             lost_date,
             city,
-            genre,
+            species,
             photo,
             description,
             microchip_number,
@@ -50,12 +49,12 @@ class LostRepository extends Repository
         ');
 
         //TODO: Pobieranie id uzytkownika zalogowanego
-        $id_user=26;
+        $id_user = 26;
 
         $stmt->execute([
             $lost->getLostDate(),
             $lost->getCity(),
-            $lost->getGenre(),
+            $lost->getSpecies(),
             $lost->getPhoto(),
             $lost->getDescription(),
             $lost->getMicrochipNumber(),
@@ -78,7 +77,7 @@ class LostRepository extends Repository
             $result[] = new Lost(
                 $lost['lost_date'],
                 $lost['city'],
-                $lost['genre'],
+                $lost['species'],
                 $lost['photo'],
                 $lost['description'],
                 $lost['microchip_number'],
@@ -113,12 +112,12 @@ class LostRepository extends Repository
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function getLostByGenre(string $searchString)
+    public function getLostBySpecies(string $searchString)
     {
         $searchString = '%' . strtolower($searchString) . '%';
 
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM lost WHERE LOWER(genre) LIKE :search
+            SELECT * FROM lost WHERE LOWER(species) LIKE :search
         ');
         $stmt->bindParam(':search', $searchString, PDO::PARAM_STR);
         $stmt->execute();

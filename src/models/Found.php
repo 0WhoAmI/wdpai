@@ -4,18 +4,18 @@ class Found
 {
     private $foundDate;
     private $city;
-    private $genre;
+    private $species;
     private $photo;
     private $description;
     private $microchipNumber;
     private $telephone;
 
 
-    public function __construct($foundDate, $city, $genre, $photo, $description, $microchipNumber, $telephone)
+    public function __construct($foundDate, $city, $species, $photo, $description, $microchipNumber, $telephone)
     {
         $this->foundDate = $foundDate;
         $this->city = $city;
-        $this->genre = $genre;
+        $this->species = $species;
         $this->photo = $photo;
         $this->description = $description;
         $this->microchipNumber = $microchipNumber;
@@ -42,14 +42,14 @@ class Found
         $this->city = $city;
     }
 
-    public function getGenre(): string
+    public function getSpecies(): string
     {
-        return $this->genre;
+        return $this->species;
     }
 
-    public function setGenre(string $genre)
+    public function setSpecies(string $species)
     {
-        $this->genre = $genre;
+        $this->species = $species;
     }
 
     public function getPhoto(): string

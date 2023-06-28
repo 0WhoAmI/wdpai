@@ -12,13 +12,13 @@ Routing::get('found', 'FoundController');
 Routing::post('reportFinding', 'FoundController');
 Routing::post('searchFoundDate', 'FoundController');
 Routing::post('searchFoundCity', 'FoundController');
-Routing::post('searchFoundGenre', 'FoundController');
+Routing::post('searchFoundSpecies', 'FoundController');
 Routing::post('searchMicrochipNumber', 'FoundController');
 Routing::post('lost', 'LostController');
 Routing::post('reportLost', 'LostController');
 Routing::post('searchLostDate', 'LostController');
 Routing::post('searchLostCity', 'LostController');
-Routing::post('searchLostGenre', 'LostController');
+Routing::post('searchLostSpecies', 'LostController');
 Routing::post('searchMicrochipNumber', 'LostController');
 
 Routing::run($path);

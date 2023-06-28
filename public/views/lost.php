@@ -45,7 +45,7 @@
           <form>
             <input placeholder="Date" type="date"/>
             <input placeholder="City" />
-            <input placeholder="Genre" />
+            <input placeholder="Species" />
             <input placeholder="Microchip number" />
           </form>
         </div>

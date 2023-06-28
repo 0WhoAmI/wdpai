@@ -50,12 +50,12 @@
               }
             }
             ?>
-            <input type="file" name="file" />
-            <input name="lostDate" type="date" placeholder="Date"/>
-            <input name="city" placeholder="City" />
-            <input name="genre" placeholder="Genre" />
+            <input type="file" name="file" required="required"/>
+            <input name="lostDate" type="date" placeholder="Date" required="required"/>
+            <input name="city" placeholder="City" required="required"/>
+            <input name="species" placeholder="Species" required="required"/>
             <input name="microchipNumber" placeholder="Microchip number" />
-            <input name="telephone" placeholder="Telephone" pattern="[0-9]{9}" title="Podaj 9 cyfr"/>
+            <input name="telephone" placeholder="Telephone" pattern="[0-9]{9}" title="Podaj 9 cyfr" required="required"/>
             <textarea name="description" placeholder="Animal description" rows="5"></textarea>
             <button type="submit">Send</button>
           </form>

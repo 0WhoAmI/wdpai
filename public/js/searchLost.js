@@ -1,6 +1,6 @@
 const searchDate = document.querySelector('input[placeholder="Date"]');
 const searchCity = document.querySelector('input[placeholder="City"]');
-const searchGenre = document.querySelector('input[placeholder="Genre"]');
+const searchSpecies = document.querySelector('input[placeholder="Species"]');
 const searchMicrochipNumber = document.querySelector(
   'input[placeholder="Microchip number"]'
 );
@@ -12,7 +12,7 @@ searchDate.addEventListener("keyup", function (event) {
     event.preventDefault();
 
     searchCity.value = "";
-    searchGenre.value = "";
+    searchSpecies.value = "";
     searchMicrochipNumber.value = "";
 
     const data = { search: this.value };
@@ -39,7 +39,7 @@ searchCity.addEventListener("keyup", function (event) {
     event.preventDefault();
 
     searchDate.value = "";
-    searchGenre.value = "";
+    searchSpecies.value = "";
     searchMicrochipNumber.value = "";
 
     const data = { search: this.value };
@@ -61,7 +61,7 @@ searchCity.addEventListener("keyup", function (event) {
   }
 });
 
-searchGenre.addEventListener("keyup", function (event) {
+searchSpecies.addEventListener("keyup", function (event) {
   if (event.key === "Enter") {
     event.preventDefault();
 
@@ -71,7 +71,7 @@ searchGenre.addEventListener("keyup", function (event) {
 
     const data = { search: this.value };
 
-    fetch("/searchLostGenre", {
+    fetch("/searchLostSpecies", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -94,7 +94,7 @@ searchMicrochipNumber.addEventListener("keyup", function (event) {
 
     searchDate.value = "";
     searchCity.value = "";
-    searchGenre.value = "";
+    searchSpecies.value = "";
 
     const data = { search: this.value };
 

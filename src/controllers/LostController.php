@@ -33,7 +33,7 @@ class LostController extends AppController
                 dirname(__DIR__) . self::UPLOAD_DIRECTORY . $_FILES['file']['name']
             );
 
-            $lost = new Lost($_POST['lostDate'], $_POST['city'], $_POST['genre'], $_FILES['file']['name'], $_POST['description'], $_POST['microchipNumber'], $_POST['telephone']);
+            $lost = new Lost($_POST['lostDate'], $_POST['city'], $_POST['species'], $_FILES['file']['name'], $_POST['description'], $_POST['microchipNumber'], $_POST['telephone']);
             $this->lostRepository->reportLost($lost);
 
             return $this->render('lost', [
@@ -74,7 +74,7 @@ class LostController extends AppController
         }
     }
 
-    public function searchLostGenre()
+    public function searchLostSpecies()
     {
         $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) :  '';
 
@@ -84,7 +84,7 @@ class LostController extends AppController
 
             header('Content-type: application/json');
             http_response_code(200);
-            echo json_encode($this->lostRepository->getLostByGenre($decoded['search']));
+            echo json_encode($this->lostRepository->getLostBySpecies($decoded['search']));
         }
     }
 

@@ -34,7 +34,7 @@ class FoundController extends AppController
                 dirname(__DIR__) . self::UPLOAD_DIRECTORY . $_FILES['file']['name']
             );
 
-            $found = new Found($_POST['foundDate'], $_POST['city'], $_POST['genre'], $_FILES['file']['name'], $_POST['description'], $_POST['microchipNumber'], $_POST['telephone']);
+            $found = new Found($_POST['foundDate'], $_POST['city'], $_POST['species'], $_FILES['file']['name'], $_POST['description'], $_POST['microchipNumber'], $_POST['telephone']);
             $this->foundRepository->reportFinding($found);
 
             return $this->render('found', [
@@ -75,7 +75,7 @@ class FoundController extends AppController
         }
     }
 
-    public function searchFoundGenre()
+    public function searchFoundSpecies()
     {
         $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) :  '';
 
@@ -85,7 +85,7 @@ class FoundController extends AppController
 
             header('Content-type: application/json');
             http_response_code(200);
-            echo json_encode($this->foundRepository->getFoundByGenre($decoded['search']));
+            echo json_encode($this->foundRepository->getFoundBySpecies($decoded['search']));
         }
     }
 

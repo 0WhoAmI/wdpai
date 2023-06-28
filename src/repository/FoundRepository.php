@@ -23,7 +23,7 @@ class FoundRepository extends Repository
         return new Found(
             $found['foundDate'],
             $found['city'],
-            $found['genre'],
+            $found['species'],
             $found['photo'],
             $found['description'],
             $found['microchipNumber'],
@@ -33,13 +33,11 @@ class FoundRepository extends Repository
 
     public function reportFinding(Found $found): void
     {
-        $date = new DateTime();
-
         $stmt = $this->database->connect()->prepare('
         INSERT INTO found(
             found_date,
             city,
-            genre,
+            species,
             photo,
             description,
             microchip_number,
@@ -54,7 +52,7 @@ class FoundRepository extends Repository
         $stmt->execute([
             $found->getFoundDate(),
             $found->getCity(),
-            $found->getGenre(),
+            $found->getSpecies(),
             $found->getPhoto(),
             $found->getDescription(),
             $found->getMicrochipNumber(),
@@ -77,7 +75,7 @@ class FoundRepository extends Repository
             $result[] = new Found(
                 $found['found_date'],
                 $found['city'],
-                $found['genre'],
+                $found['species'],
                 $found['photo'],
                 $found['description'],
                 $found['microchip_number'],
@@ -112,12 +110,12 @@ class FoundRepository extends Repository
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function getFoundByGenre(string $searchString)
+    public function getFoundBySpecies(string $searchString)
     {
         $searchString = '%' . strtolower($searchString) . '%';
 
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM found WHERE LOWER(genre) LIKE :search
+            SELECT * FROM found WHERE LOWER(species) LIKE :search
         ');
         $stmt->bindParam(':search', $searchString, PDO::PARAM_STR);
         $stmt->execute();
